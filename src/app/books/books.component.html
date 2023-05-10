@@ -1,0 +1,28 @@
+
+
+<a routerLink="/book-create" class="btn btn-success" data-toggle="modal">
+  <mat-icon>add</mat-icon> <span>Add New Customer</span>
+</a>
+
+<div class="table-container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>isbn</th>
+        <th>Title</th>
+        <th>Auther</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let element of books">
+      <tr class="table-rows">
+        <td class="table-row">{{ element.isbn }}</td>
+        <td>{{ element.title }}</td>
+        <td>{{ element.author }}</td>
+        <td [routerLink]="['/book-details/', element._id]">
+          <button mat-raised-button color="primary">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
